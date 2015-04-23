@@ -31,3 +31,22 @@ var recSumArray = function (arr) {
   return arr[0] + prevSolution;
 
 };
+
+var fib = function (n) {
+  if (n === 1) {
+    return [1];
+  }
+  else if (n === 2) {
+    return [1, 1];
+  }
+
+  var prevSolution = fib(n - 1);
+  var sum = prevSolution[prevSolution.length - 1] + prevSolution[prevSolution.length - 2];
+  prevSolution.push(sum);
+  return prevSolution;
+};
+
+var bsearch = function(arr, val){
+  
+
+};
