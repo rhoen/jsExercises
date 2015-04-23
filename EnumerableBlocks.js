@@ -18,16 +18,14 @@ Array.prototype.myMap = function(func) {
   return result;
 };
 
-var addOne = function(val) {
-  return val + 1;
+Array.prototype.myInject = function (func) {
+  var accumulator = this[0];
+
+  var injectFunc = function (val) {
+    accumulator = func(accumulator, val);
+  };
+
+  this.slice(1, this.length).myEach(injectFunc);
+
+  return accumulator;
 };
-
-class Array
-def my_map(&blk)
-  result = []
-  self.each do |el|
-    result << blk.call(el)
-  end
-
-  result
-end
