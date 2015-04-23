@@ -18,3 +18,16 @@ var sumArray = function (arr) {
 
   return sum;
 };
+
+var recSumArray = function (arr) {
+  if (arr.length === 1){
+    return arr[0];
+  }
+  else if(arr.length === 0){
+    return [];
+  }
+
+  var prevSolution = recSumArray(arr.slice(1, arr.length));
+  return arr[0] + prevSolution;
+
+};
