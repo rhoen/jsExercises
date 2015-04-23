@@ -47,6 +47,19 @@ var fib = function (n) {
 };
 
 var bsearch = function(arr, val){
-  
+  var midPoint = (arr.length % 2 === 0) ? arr.length / 2 : (arr.length - 1) / 2;
+  if(arr[midPoint] === val) {
+    return midPoint;
+  }
+  else if (arr.length <= 1) {
+    return NaN;
+  }
+
+  if (arr[midPoint] < val){
+    return midPoint + 1 + bsearch(arr.slice(midPoint + 1, arr.length), val);
+  }
+  else if (arr[midPoint] > val){
+    return bsearch(arr.slice(0, midPoint), val);
+  }
 
 };
