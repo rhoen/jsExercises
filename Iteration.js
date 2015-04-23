@@ -16,3 +16,18 @@ var bubbleSort = function(arr) {
 
   return arr;
 };
+
+var substrings = function (str) {
+  var i, j, subs, sub;
+  subs = [];
+  for(i = 0; i < str.length; i++){
+    for (j = i + 1; j <= str.length; j++){
+      sub = str.substring(i,j);
+      if (subs.indexOf(sub) === -1) {
+        subs.push(sub);
+      }
+    }
+  }
+
+  return subs;
+};
